@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      /* great trick to reset the page - Maurice Beasley taught on Zoom */
+      margin: 0;
+      padding: 0;
+      font-size: 15px;
+    }
+
+    header {
+      background-image: url("https://i.ibb.co/42DWH3w/mac-OS-Catalina-Light-mode-974x400-copy.jpg");
+      height: 100vh;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      font-family: Georgia, Helvetica, sans-serif;
+    }
+
+    header h1 {
+      color: white;
+      font-size: 5em;
+      text-align: center;
+    }
+
+    header h2 {
+      color: white;
+      font-size: 1em;
+      text-align: center;
+    }
+
+    header h3 {
+      position: absolute;
+      font-size: 3em;
+      color: white;
+      position: absolute;
+      bottom: 7vh;
+    }
+
+    header h6 {
+      position: absolute;
+      font-size: 1em;
+      color: white;
+      position: absolute;
+      bottom: 1vh;
+      text-align: right;
+    }
+
+    #navbar {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    #navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 20px 100px;
+      text-decoration: none;
+      font-size: 17px;
+    }
+
+    #navbar a:hover {
+      background-color: #AC7473;
+      color: #29262F;
+    }
+
+    .main,
+    .about,
+    .hobbies,
+    .hireme {
+      padding-top: 160px;
+      height: 800px;
+    }
+
+    /* there is an error in one of these settings making page jump..check on it */
+    .main {
+      background-color: #CCB0B7;
+      color: #011A05;
+    }
+
+    .about {
+      background-color: #887177;
+      color: #011A05;
+    }
+
+    .hobbies {
+      background-color: #8a88ab;
+      color: #011A05;
+    }
+
+    .hireme {
+      background-color: #ac7473;
+      color: #011A05;
+    }
+
+    h1 {
+      font-size: 30px;
+    }
+
+    h2 {
+      font-size: 24px;
+    }
+
+    h3 {
+      font-size: 18px;
+    }
+
+    h4 {
+      font-size: 15px;
+    }
+
+    .sticky {
+      position: fixed;
+      top: 0;
+      width: 100%;
+    }
+
+    .sticky+.content {
+      padding-top: 100px;
+    }
+
+    body {
+      background-color: #CCB0B7;
+      text-size: 2em;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #link1,
+    #link2,
+    #link3,
+    #link4 {
+      position: relative;
+      top: 95px;
+      /* this number changes the distance the text starts from the navbar */
+    }
+
+    /* Contact us created from Web Development Intro tutorial - all parts not functioning*/
+    form {
+      padding: 10px;
+      margin: 10px 0;
+      width: 600px;
+    }
+
+    form>div {
+      margin: 10px 0;
+    }
+
+    .inline label {
+      display: inline-block;
+      width: 100px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    textarea {
+      padding: 10px;
+      width: 400px;
+    }
+
+    .edutain {
+      box-sizing: border-box;
+      border: 0px solid grey;
+      /* width: 30%; */
+      margin: 5px;
+      padding: 5px;
+      width: 100%;
+      text-align: center;
+    }
+
+    #hobbiest {
+      display: block;
+      font-family: 'Barlow', sans-serif;
+      margin: 0 auto;
+      color: rgb(49, 46, 46);
+      text-align: center;
+    }
+
+    @media (min-width: 800px) {
+      width: 40%;
+      margin-left: 2em;
+    }
+
+    .edutain {
+      display: inline-block;
+      width: 48%;
+    }
+    }
+
+    @media (min-width: 1000px) {
+      header h1 {
+        width: 100%;
+      }
+
+      main {
+        width: 68%;
+        display: inline-block;
+        padding: 10px;
+      }
+    }
+
+    @media (min-width: 1200px) {
+      body {
+        text-align: center;
+      }
+
+      .edutain {
+        width: 30%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <p class="double">
+      <h1>T E C H &nbsp;&nbsp; O A K L A N D &nbsp;&nbsp; T I M E S</h1>
+      <hr>
+      <h2>T E C H O A K L A N D . C O M &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Y O U R &nbsp;&nbsp; D A I L Y &nbsp;&nbsp; D O S E &nbsp;&nbsp; OF &nbsp;&nbsp; M U S I C &nbsp;&nbsp; & &nbsp;&nbsp; T E C H
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        T U E S . &nbsp;&nbsp; J A N. &nbsp;&nbsp; 2 8 <sup>t h</sup>, &nbsp;&nbsp; 2 0 2 0</h2>
+      <hr>
+      <h3>Introducing <br>Pandora's N E X T<br>Demo Tape Apprentice (iOS)!</h3>
+      <h6>(Scroll Down Please)</h6>
+  </header>
+
+  <nav id="navbar">
+    <a href="#link1">HOME</a>
+    <a href="#link2">ABOUT ME</a>
+    <a href="#link3">HOBBIES</a>
+    <a href="#link4">HIRE ME TODAY</a>
+  </nav>
+  <span id="link1"></span>
+  <section class="main" id="main">
+    <br><br>
+    <h1>R O T T E I N I A &nbsp;&nbsp; F R E E M A N</h1><br><br>
+    <h2>Graphic Designer and Aspiring Web and iOS Developer</h2><br><br>
+    <h3>One of Oakland's Most Surprising Candidates!</h3><br><br>
+    <h4>But first! A few announcements from our Sponsor!!</h4><br><br>
+    <a href="https://i.ibb.co/pXWtc0M/babyodasays.jpg" width="30%" target="_blank"><em>Click Here for Announcements</em></a><br><br>
+    <p>This text below is not about ANYTHING at all (showing use of generic text)
+      "On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the charms of pleasure of the moment, so blinded by desire, that they cannot foresee the pain and trouble that are bound to ensue;
+      and equal blame belongs to those who fail in their duty through weakness of will, which is the same as saying through shrinking from toil and pain. These cases are perfectly simple and easy to distinguish. In a free hour, when our power of
+      choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed and every pain avoided. But in certain circumstances and owing to the claims of duty or the obligations of business it
+      will frequently occur that pleasures have to be repudiated and annoyances accepted. The wise man therefore always holds in these matters to this principle of selection: he rejects pleasures to secure other greater pleasures, or else he endures
+      pains to avoid worse pains."</p>
+  </section>
+  <span id="link2"></span>
+  <section class="about" id="about">
+    <br><br>
+    <H1>ABOUT</H1><br><br>
+    <h2>Why Rotteinia is a GREAT candidate?</<h2>
+    </h2><br><br>
+    <p>At the age of 10, Rotteinia, on the day it was released, received an Apple IIc computer and all the accessories that could come with it. <br>This was the beginning of her dreams to become something she had not heard of yet.</p>
+    <br><br>
+    <p>Rotteinia self-taught her certification prior to 2004: Microsoft Office, A+, Net+ and various other certifications. <br>She had already begun working in the field of graphic design before returning to school for her Graphic Design degree from
+      American Intercontinental University.</p>
+    <br><br>
+    <p>Unfortunately life never turns out the way we think. Taking care of family, Rotteinia ended up doing all sorts of work, <br>but the work she loved due to 10 years out of the jobforce taking care of younger and elder family members. <br>Now
+      that the "family job" is over...<br> THIS IS HER TIME!!!</p>
+    <br><br><br><br>
+    <h2>CAREER KARMA</h2>
+    Rotteinia joined Career Karma in December of 2019 while taking a vacation in Reno to figure out what her next step would be now that she had an empty nest.<br>Preparing for bootcamp at either Flatiron or Thinkful (previous plan) or an AMAZING
+    apprenticeship at Pandora, Rotteinia started a small 20
+    women coding squad; <br>appropriately named <b>"The Coding Queens Study Group."</b> <br> The groups main purpose is to provide a means to share resources, stories, motivational help, study groups and challenges for women<br> with certain
+    constraints to learning and/or work to help find valid solutions while finding new and interesting ways to study.
+    ie.<br><br>
+
+
+    <ul>
+
+      <li>1. Reading a book outloud to be recorded so a busy mom can listen to her studies while the kids are up</li>
+      <li>2. Taking notes from a particular reading or video to help another mom having troubles understanding.</li>
+      <li>3. 24 hour access to other moms that may have gone through or be going through the same issues</li>
+      <li>4. We treat each other with OHANA so no one gets left behind and everyone benefits the same</li>
+      <li>5. Motivational messages throughout the week that may or may not apply to what is going on in and outside the app</li>
+      <li>6. A place to call home...even when you are sitting in your home..or perhaps lack one</li>
+    </ul>
+  </section>
+  <span id="link3"></span>
+  <section class="hobbies" id="hobbies">
+    <br><br>
+    <H1>HOBBIES</H1><br><br>
+    <h3>What is Rotteinia doing when she's not at work?</h3><br><br>
+    <div id="hobbiest">
+      <h2> FUN AND ENTERTAINMENT:</h2>
+      <div class="edutain">
+        <img src="https://i.ibb.co/92Z0036/dance.jpg" height=200px width=200px alt="Dancing">
+        <p>Performing to a Reggae Song</p>
+      </div>
+
+      <div class="edutain">
+        <img src="https://i.ibb.co/ZY8dJVk/10455941-10154968526860195-2274488157056253795-n.jpg" alt="Crochet">
+        <p>Crocheting miniture cheeseburgers is a well paid hobby.</p>
+      </div>
+
+      <div class="edutain">
+        <img src="https://i.ibb.co/jWqY66Y/10849974-10154968454540195-6846341105320298759-n.jpg" alt="Design">
+        <p>Working with kids and placing them in fantasy worlds</p>
+      </div>
+      <br><br>
+      <p>Geekflix and chill is always a great pasttime along with readding...but those tend to be hard to put a picture to. Below
+        will be found, Rotteinia's favorite design project.<br><br><br>
+        <img src="https://i.ibb.co/rs3ZBJy/10636438-10154790319900195-281081078937351634-o.jpg" alt="Favorite Design Project">
+      </p>
+    </div>
+
+  </section>
+  <span id="link4"></span>
+  <section class="hireme" id="hireme">
+    <h1>WANT TO HIRE ME&#63;&#63;</h1><br>
+    <br>
+    <h2>I know... It's pretty soon to ask such a direct question. Just in case it crosses your mind <b>OR</b> you have any other questions or comments;<br> please feel free to contact me below:</h2><br>
+    <form>
+      <div class="inline">
+        <label for="name">Name:</label><input type="text" placeholder="Enter your name" id="name" name="name">
+      </div>
+      <div class="inline">
+        <label for="email">Email:</label> <input type="email" placeholder="Enter your email" id="email" name="email">
+      </div>
+      <div class="inline">
+        <label for="message">Message:</label> <textarea placeholder="Enter whatever comes to mind." cols="30" rows="5" id="message" name="message"></textarea>
+      </div>
+      <div class="inline">
+        <label for="subject">Subject:</label>
+        <input type="text" list="subjects" id="subject" placeholder="Enter your subject">
+      </div>
+      <div>
+        <p>Subscribe to see future projects by:</p>
+        <label for="newsletter">Newsletter</label>
+        <input type="checkbox" id="newsletter" name="subscribe" value="newsletter">
+        <label for="email">Email</label>
+        <input type="checkbox" id="email" name="subscribe" value="email">
+        <label for="post">Post</label>
+        <input type="checkbox" id="post" name="subscribe" value="post">
+      </div>
+      <div>
+        <p>How would you like us to respond?</p>
+        <label for="phoneResponse">Phone</label>
+        <input type="radio" id="phoneResponse" name="response" value="phone">
+        <label for="emailResponse">Email</label>
+        <input type="radio" id="emailResponse" name="response" value="email">
+      </div>
+
+      <div>
+        <input type="submit">
+        <input type="reset">
+        <!-- the buttons do not yet work. I haven't made it that far in the coursework> -->
+      </div>
+    </form>
+  </section>
+
+  <footer>
+    <hr><br>
+    <h6>This project worked on over several days in attempts to make sure I am ready for this opportunity. I put this work together to show what I have learned in the 21+ days of being with Career Karma. Hopefully this shows off where I am
+      coming from and my coming projects will potentially show where I can get to. Thank you for your time. Rotteinia</h6><br>
+  </footer>
+  <script>
+    window.onscroll = function() {
+      myFunction()
+    };
+
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+
+</body>
+
+</html>
