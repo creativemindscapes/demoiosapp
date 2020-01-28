@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
-  <link rel="shortcut icon" type="image/png" href="https://i.ibb.co/tzGhQBX/myflavicon.png">
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">  <style>
+<title>Rotteinia is a GREAT candidate</title>
+<link rel="shortcut icon" type="image/png" href="https://i.ibb.co/tzGhQBX/myflavicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
     html,
     body,
     div,
@@ -223,8 +224,10 @@
     /* Contact us created from Web Development Intro tutorial - all parts not functioning*/
     form {
       padding: 10px;
-      margin: 10px 0;
-      width: 600px;
+      margin: auto;
+      width: 500px;
+	max-width:100%;
+	text-align:left;
     }
 
     form>div {
@@ -232,15 +235,18 @@
     }
 
     .inline label {
-      display: inline-block;
-      width: 100px;
+	margin:0 5px 5px 0;
+	display: inline-block;
     }
 
     input[type="text"],
     input[type="email"],
+    input[type="tel"],
     textarea {
+	margin:0;
       padding: 10px;
-      width: 400px;
+      width: 100%;
+	border:1px solid #ccc;
     }
 
     .edutain {
@@ -297,7 +303,6 @@
 </head>
 
 <body>
-
   <header>
     <p class="double">
       <h1>T E C H &nbsp;&nbsp; O A K L A N D &nbsp;&nbsp; T I M E S</h1>
@@ -399,38 +404,40 @@
     <h2>I know... It's pretty soon to ask such a direct question. Just in case it crosses your mind <b>OR</b> you have any other questions or comments;<br> please feel free to contact me below:</h2><br>
     <form>
       <div class="inline">
-        <label for="name">Name:</label><input type="text" placeholder="Enter your name" id="name" name="name">
+        <label for="name">Name:</label><input type="text" placeholder="Enter your name" id="name" name="name" required>
       </div>
       <div class="inline">
-        <label for="email">Email:</label> <input type="email" placeholder="Enter your email" id="email" name="email">
+        <label for="email">Email:</label> <input type="email" placeholder="Enter your email" id="email" name="email" required>
       </div>
       <div class="inline">
-        <label for="message">Message:</label> <textarea placeholder="Enter whatever comes to mind." cols="30" rows="5" id="message" name="message"></textarea>
+        <label for="phone">Phone:</label> <input type="tel" placeholder="Enter your phone number" id="phone" name="phone" required>
+      </div>
+      <div class="inline">
+        <label for="message">Message:</label> <textarea placeholder="Enter whatever comes to mind." cols="30" rows="5" id="message" name="message" required></textarea>
       </div>
       <div class="inline">
         <label for="subject">Subject:</label>
-        <input type="text" list="subjects" id="subject" placeholder="Enter your subject">
+        <input type="text" list="subjects" id="subject" placeholder="Enter your subject" required>
       </div>
       <div>
         <p>Subscribe to see future projects by:</p>
-        <label for="newsletter">Newsletter</label>
-        <input type="checkbox" id="newsletter" name="subscribe" value="newsletter">
-        <label for="email">Email</label>
-        <input type="checkbox" id="email" name="subscribe" value="email">
-        <label for="post">Post</label>
-        <input type="checkbox" id="post" name="subscribe" value="post">
+        <label for="newslettercheck">Newsletter</label>
+        <input type="checkbox" id="newslettercheck" name="subscribe" value="newsletter">
+        <label for="emailcheck">Email</label>
+        <input type="checkbox" id="emailcheck" name="subscribe" value="email">
+        <label for="postcheck">Post</label>
+        <input type="checkbox" id="postcheck" name="subscribe" value="post">
       </div>
       <div>
         <p>How would you like us to respond?</p>
         <label for="phoneResponse">Phone</label>
         <input type="radio" id="phoneResponse" name="response" value="phone">
         <label for="emailResponse">Email</label>
-        <input type="radio" id="emailResponse" name="response" value="email">
+        <input type="radio" id="emailResponse" name="response" value="email" checked="checked">
       </div>
 
       <div>
-        <input type="submit">
-        <input type="reset">
+        <button type="submit">Send Message</button>
         <!-- the buttons do not yet work. I haven't made it that far in the coursework> -->
       </div>
     </form>
@@ -459,5 +466,4 @@
   </script>
 
 </body>
-
 </html>
